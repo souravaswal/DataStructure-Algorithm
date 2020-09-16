@@ -1,16 +1,78 @@
-public class PossiblePathsinMatrix 
+public class MyLinkedList
 {
-    public static void main(String[] args) 
+    Node head;
+
+    void add(int data)
     {
-        System.out.println(PossiblePaths(1, 3));
+        Node nodeToAdd = new Node(data);
+        
+        if(isEmpty())
+        {
+            head = nodeToAdd;
+            return;
+        }
+        
+        Node temp = head;
+        while(temp.Next != null)
+        {
+            temp = temp.Next;
+        }
+        temp.Next = nodeToAdd;
     }
     
-    static int PossiblePaths(int i, int j)
+    public void printList()
     {
-        if(i==1 || j==1)
+        Node temp = head;
+        while(temp != null)
         {
-            return 1;
+            System.out.println("Element is: "+temp.data);
+            temp = temp.Next;
         }
-        return PossiblePaths(i-1, j) + PossiblePaths(i, j-1); 
+    }
+    
+    public void remove() throws Exception
+    {
+        if(isEmpty())
+        {
+            throw new Exception("You can't remove an element from empty LinkedList");
+        }
+        Node temp = head;
+        while(temp.Next.Next != null)
+        {
+            temp = temp.Next;
+        }
+        temp.Next = null;
+    }
+    
+    public void removeFromTop() throws Exception
+    {
+        if(isEmpty())
+        {
+            throw new Exception("You can't remove an element from empty LinkedList");
+        }
+        
+        if(head.Next == null)
+        {
+            head = null;
+            return;
+        }
+        head = head.Next;
+    }
+    
+    public boolean isEmpty()
+    {
+        return head==null;
+    }
+    
+    static class Node
+    {
+        int data;
+        Node Next;
+        
+        public Node(int data) 
+        {
+            this.data = data;
+            Next = null;
+        }
     }
 }
