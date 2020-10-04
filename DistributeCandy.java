@@ -1,36 +1,30 @@
-public class Solution {
-    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
-    public int canCompleteCircuit(final int[] A, final int[] B) {
-        for(int i=0; i<A.length; i++)
+public class Solution 
+{
+    public int candy(int[] A) 
+    {
+        int candies[] = new int[A.length];
+        candies[0] = 1;
+        for(int i=1; i<candies.length; i++)
         {
-            int amountOfGas = 0;
-            int gasNeeded = 0;
-            int length = 0;
-            int j = i;
-            
-            // As we are being greedy hence, we will return the first index which satisfies our need
-            while(length != B.length)
+            candies[i] = 1;
+            if(A[i] > A[i-1])
             {
-                if(j >= B.length)
-                {
-                    j = j%B.length;
-                }
-                //Adding gas from each station & adding it in amountOfGas & check for each gas pump
-                amountOfGas+=A[j];
-                gasNeeded+=B[j];
-                if(amountOfGas < gasNeeded)
-                {
-                    break;
-                }
-                j++;
-                length++;
-            }
-            // Checks if amountOfGas was more than gasNeeded at the end of the loop.
-            if(amountOfGas >= gasNeeded)
-            {
-                return i;
+                candies[i] = candies[i-1] + 1; 
             }
         }
-        return -1;
+        
+        for(int j=A.length-1; j>0; j--)
+        {
+            if((A[j-1] > A[j]) && (candies[j-1]<=candies[j]))
+            {
+                candies[j-1] = candies[j]+1;
+            }
+        }
+        int sum = 0;
+        for(int i=0; i<candies.length; i++)
+        {
+            sum = sum + candies[i];
+        }
+        return sum;
     }
 }
