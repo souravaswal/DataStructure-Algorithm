@@ -1,53 +1,153 @@
-#Smallest path from one cell to other cell of a 2-D matrix
+/**
+This is implementation of Graph using Array of LinkedList 
+& implementation
+**/
 
-public class RecursionProgram 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Stack;
+
+public class myGraph 
 {
-    public static void main(String args[])
+    private LinkedList<Integer> adj[];
+    
+    // Here, we are initializing Adjacency Array with a LinkedList
+    @SuppressWarnings("unchecked")
+    public myGraph(int v)
     {
-        int array[][] = {{1, 1, 1, 1},
-                         {1, 0, 1, 1},
-                         {1, 0, 1, 0},
-                         {0, 1, 1, 1}
-                         };
-        int result = shortestPath(array, 0, 0, 1, 3);
-        if(result >= 10000) 
+        adj = new LinkedList[v];
+        for(int i=0; i<v; i++)
         {
-            System.out.println("No Valid Path Found");
+            adj[i] = new LinkedList<Integer>();
         }
-        else
-        {
-            System.out.println(result);
-        } 
     }
     
-    static int shortestPath(int a[][], int i, int j, int x, int y)
+    // Here we are filling adjacency array with LinkedList
+    public void addEdge(int source, int destination)
     {
-        int rows = a.length;
-        int columns = a[0].length;
-        boolean visited[][] = new boolean[rows][columns];
-        return shortestPath(a, i, j, x, y, visited);
+        adj[source].add(destination);
+        adj[destination].add(source);
+    }
+    
+    
+    //Printing Graph values here
+    public void printGraph(int edges)
+    {
+        for(int k=0; k<edges; k++)
+        {
+            System.out.println(adj[k]);
+        }
+    }
+    
+    // Search using BFS search
+    public int bfs(int source, int destination)
+    {
+        boolean[] visited = new boolean[adj.length];
+        int[] parent = new int[adj.length];
+        Queue<Integer> queue = new LinkedList<Integer>();
+        queue.add(source);
+        parent[source] = -1;
+        visited[source] = true;
+        
+        // Here, we insert each neighbor of an element into queue & check if it is visited or not.
+        while(!queue.isEmpty())
+        {
+            int current = queue.poll();
+            if(source == destination) break;
+            for(int neighbor : adj[current])
+            {
+                if(!visited[neighbor])
+                {
+                    visited[neighbor] = true;
+                    queue.add(neighbor);
+                    parent[neighbor] = current;
+                }
+            }
+        }
+        
+        int distance = 0;
+        int current = destination;
+        
+        // Here, we traversed the parent array & reaches to source from destination.
+        while(parent[current] != -1)
+        {
+            System.out.println(current+" --> " );
+            current = parent[current];
+            distance++;
+        }
+        return distance;
+    }
+    
+    // Utility method that will make a recursive call and checks if path is possible to the destination or not
+    public boolean dfsUtils(int source, int destination, boolean[] vis)
+    {
+        if(source == destination)
+        {
+            return true;
+        }
+        for (int neighbor : adj[source]) {
+            if(!vis[neighbor])
+            {
+                vis[neighbor] = true;
+                boolean isConnected = dfsUtils(neighbor, destination, vis);
+                if(isConnected) return true;
+            }
+        }
+        return false;
+    }
+    
+    // Method to call util method
+    public boolean dfs(int source, int destination)
+    {
+        boolean[] vis = new boolean[adj.length];
+        vis[source] = true;
+        return dfsUtils(source, destination, vis);
+    }
+    
+    public boolean dfsStack(int source, int destination)
+    {
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(source);
+        boolean visited[] = new boolean[adj.length];
+        visited[source] = true;
+        while(!stack.isEmpty())
+        {
+            if(source ==destination) return true;
+            int current = stack.pop();
+            for(int neighbor : adj[current])
+            {
+                if(!visited[neighbor])
+                {
+                    visited[neighbor] = true;
+                    stack.push(neighbor);
+                }
+            }
+        }
+        return false;
+    }
+    
+    public static void main(String[] args) 
+    {
+        Scanner input = new Scanner(System.in);
+        int vertices = input.nextInt();
+        int edges = input.nextInt();
+        
+        myGraph graph = new myGraph(vertices);
+        System.out.println("Enter "+edges+" edges");
+        for(int i=0; i<edges; i++)
+        {
+            int source = input.nextInt();
+            int destination = input.nextInt();
+
+            graph.addEdge(source, destination);
+        }
+        input.close();
+        graph.printGraph(edges);
+        graph.bfs(0, 4);
+        graph.dfsStack(0, 4);
+        System.out.println(graph.dfs(0, 3));
     }
 
-    static boolean isValid(int[][] a, int i, int j, boolean[][] visited)
-    {
-        int rows = a.length;
-        int columns = a[0].length;
-        return i >= 0 && j >= 0 && i < rows && j < columns && a[i][j] == 1 && !visited[i][j];
-    }
-    
-    private static int shortestPath(int[][] a, int i, int j, int x, int y, boolean[][] visited) {
-        // TODO Auto-generated method stub
-        if(!isValid(a, i, j, visited)) return 10000;
-        if(i == x && j == y) return 0;
-        
-        visited[i][j] = true;
-        int left = shortestPath(a, i, j-1, x, y, visited) + 1;
-        int right = shortestPath(a, i, j+1, x, y, visited) + 1;
-        int top = shortestPath(a, i-1, j-1, x, y, visited) + 1;
-        int bottom = shortestPath(a, i+1, j, x, y, visited) + 1;
-		
-		// Back Tracking 
-        visited[i][j] = false;
-        return Math.min(Math.min(left, right), Math.min(top, bottom));
-    }
 }
+
