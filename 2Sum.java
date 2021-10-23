@@ -11,7 +11,7 @@ Output: index1 = 1, index2 = 2
 **/
 
 public class Solution {
-    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    // PLEASE DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
     public int[] twoSum(final int[] A, int B) {
         int min_first = Integer.MAX_VALUE, min_second = Integer.MAX_VALUE;
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
