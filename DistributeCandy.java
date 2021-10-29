@@ -1,5 +1,5 @@
 /**
-Distribute minimum candies to the students such that one no two adjacent students are having equal number of candies.
+Distribute minimum candies to the students such that one no two adjacent students are having equal number of candies
 **/
 public class Solution 
 {
