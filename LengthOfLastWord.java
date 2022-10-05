@@ -10,3 +10,29 @@ public class Solution {
         return array[array.length-1].length();
     }
 }
+
+// Another solution for the problem by traversing through the end of the string
+public class Solution {
+	public int lengthOfLastWord(final String a)
+	{
+		boolean char_flag = false;
+		int len = 0;
+		for (int i = a.length() - 1; i >= 0; i--) {
+			if (Character.isLetter(a.charAt(i))) {
+				// Once the first character from last
+				// is encountered, set char_flag to true.
+				char_flag = true;
+				len++;
+			}
+			else {
+				// When the first space after the characters
+				// (from the last) is encountered, return the
+				// length of the last word
+				if (char_flag == true)
+					return len;
+			}
+		}
+		return len;
+	}
+}
+
