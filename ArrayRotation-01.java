@@ -1,4 +1,4 @@
-#Rotate a 2-D Matrix with 90 degree using another matrix
+#Rotate a 2-D Matrix with 90 degree using another matrix.
 
 import java.util.ArrayList;
 import java.util.List;

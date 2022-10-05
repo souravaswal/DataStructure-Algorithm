@@ -1,4 +1,4 @@
-#Fill the desired number to all the connected cells of a specific location in a matrix
+#Fill the desired number to all the connected cells of a specific location in a matrix.
 
 public class RecursionProgram 
 {
@@ -40,7 +40,7 @@ public class RecursionProgram
             for (int j = 0; j < a[0].length; j++) {
                 System.out.print(a[i][j]+" ");
             }
-            System.out.println("");
+            System.out.println(" ");
         }
     }
 }

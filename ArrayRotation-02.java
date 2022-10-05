@@ -14,7 +14,7 @@ public class TestQuestions
         int length = matrix.length;
         for (int i = 0; i < length/2; i++) 
         {
-            for (int j = i; j < length-i-1; j++) 
+            for (int j = i; j<length-i-1; j++) 
             {
                 int temp = matrix[i][j];
                 matrix[i][j] = matrix[length-j-1][i];

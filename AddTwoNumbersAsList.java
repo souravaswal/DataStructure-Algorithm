@@ -17,7 +17,7 @@ Output: 7 -> 0 -> 8
     342 + 465 = 807
 
 Make sure there are no trailing zeros in the output list
-So, 7 -> 0 -> 8 -> 0 is not a valid response even though the value is still 807.
+So, 7 -> 0 -> 8 -> 0 is not a valid response even though the value is still 807
 
  **/
 public class Solution {
