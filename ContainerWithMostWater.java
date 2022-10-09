@@ -17,7 +17,7 @@ Input : [1, 5, 4, 3]
 Output : 6
 
 Explanation : 5 and 3 are distance 2 apart. So size of the base = 2. Height of container = min(5, 3) = 3. 
-So total area = 3 * 2 = 6
+So total area = 3 * 2 = 6.
 
 
 **/
