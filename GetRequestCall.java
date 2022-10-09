@@ -16,7 +16,7 @@ import java.net.*;
 class Result {
 
     /*
-     * Complete the 'getNumDraws' function below.
+     * Complete the 'getNumDraws' function below
      *
      * The function is expected to return an INTEGER.
      * The function accepts INTEGER year as parameter.
