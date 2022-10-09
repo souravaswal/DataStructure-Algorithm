@@ -25,8 +25,7 @@ public class Solution {
         ListNode node = new ListNode(0);
         ListNode current = node;
         int sum, carry = 0;
-        while(A != null || B != null)
-        {
+        while(A != null || B != null) {
             sum = carry;
             if(A != null)
             {
