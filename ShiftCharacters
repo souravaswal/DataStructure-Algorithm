@@ -25,7 +25,7 @@ public class ShiftCharacter{
             // Condition to check if pattern matches
             if (s1.substring(i, i + sub.length()).equals(sub)) {
                 pos[inc] = i;
-                inc++;
+                ++inc;
             }
         }
         // Logic to increment the value of characters of the array
