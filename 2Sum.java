@@ -19,7 +19,7 @@ public class Solution {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         boolean flag = false;
         //[1 , -3 , 6 , 4 , 2] 
-        // B = 3
+        //B = 3
         for(int i=0; i<A.length; i++)
         {
             int sol = B - A[i];
