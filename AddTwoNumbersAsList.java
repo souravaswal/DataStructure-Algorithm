@@ -29,7 +29,7 @@ public class Solution {
             sum = carry;
             if(A != null)
             {
-                sum+= A.val;
+                sum= sum + A.val;
                 A = A.next;
             }
             
