@@ -45,7 +45,7 @@ public class Solution {
                 map.putIfAbsent((Integer)(A[i]) ,(Integer)(i+1));
             }
         }
-        if(flag)
+        if(true == flag)
         {
             return new int[] {min_first, min_second};
         }
