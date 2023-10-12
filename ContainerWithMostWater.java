@@ -9,7 +9,7 @@ Find two lines, which together with x-axis forms a container, such that the cont
 
 Your program should return an integer which corresponds to the maximum area of water that can be contained ( Yes, we know maximum area instead of maximum volume sounds weird. But this is 2D plane we are working with for simplicity ).
 
-    Note: You may not slant the container. 
+    Note: You may not slant the container
 
 Example :
 
