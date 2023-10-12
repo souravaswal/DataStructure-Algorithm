@@ -7,7 +7,7 @@ public class Solution {
         for(int i=0; i<A.length; i++)
         {
            int diff = Math.abs(A[i] - B[i]);
-           if(diff > max){
+           if( max < diff ){
                max = diff;
            }
         }
