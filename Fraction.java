@@ -39,6 +39,7 @@ public class Solution
         
         answer.append(".");
         Map<Long, Integer> map = new HashMap<Long, Integer>();
+        //running the loop till the time, number's last digit
         while(remainder != 0)
         {
             if(map.containsKey(remainder))
