@@ -65,7 +65,7 @@ class Result {
             ex.printStackTrace();
         }
         
-        if(engine.get("total") == null){
+        if(null == engine.get("total")){
             throw new RuntimeException("Can't retrieve data !!!");
         }
         
