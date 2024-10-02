@@ -3,7 +3,7 @@ import java.util.*;
  * The class declaration for the second question
  * Program to shift the characters of the string based on the index of a substring
  */
-public class ShiftCharacter{
+public class ShiftCharacters{
 	/**
 	 * The function encode is used for shifting the string by 'k' characters
 	 * 'k' is defined as the index of the substring sub in string s1 
