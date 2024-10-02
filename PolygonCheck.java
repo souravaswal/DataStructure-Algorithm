@@ -3,7 +3,7 @@ import java.util.*;
  * Main Class
  *
  */
-public class PolyCheck {
+public class PolygonCheck {
 	/**
 	 * This method checks whether a polygon can be formed with given side lengths
 	 * @param arrLen The array that contains the lengths of sides of polygon

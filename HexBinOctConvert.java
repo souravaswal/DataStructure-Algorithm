@@ -1,5 +1,5 @@
 import java.util.*;
-public class Q1 {
+public class HexBinOctConvert {
 	/**
 	 * Function that converts the number to Octal
 	 * @param s The resultant number
