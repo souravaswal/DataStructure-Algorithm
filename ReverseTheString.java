@@ -37,7 +37,7 @@ Output 2:
 
 **/
 
-public class Solution {
+public class ReverseTheString {
     public String solve(String A) {
         String[] sentence = A.split("\\s+");
         String solution = "";
