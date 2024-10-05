@@ -1,6 +1,6 @@
-#Maximize the sum of the coins for the player.
+// Maximize the sum of the coins for the player.
 
-public class RecursionProgram 
+public class GameTheory
 {
     public static void main(String args[])
     {

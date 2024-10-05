@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
 
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -8,7 +10,7 @@ Return 0 / 1 ( 0 for false, 1 for true ) for this problem
 
 **/
 
-public class Solution {
+public class GenerateAllParenthesis {
     public int isValid(String A) {
         Stack<Character> stack = new Stack<Character>();
         int i = 0;

@@ -2,7 +2,7 @@
 Need to find out, if a vehicle would be able to travel with the amount of fuel
 **/
 
-public class Solution {
+public class GasStation {
     // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
     public int canCompleteCircuit(final int[] A, final int[] B) {
         for(int i=0; i<A.length; i++)
