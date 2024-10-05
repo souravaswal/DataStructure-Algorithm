@@ -1,6 +1,6 @@
-#Smallest path from one cell to other cell of a 2-D matrix
+// Smallest path from one cell to other cell of a 2-D matrix
 
-public class RecursionProgram 
+public class ShortestPath
 {
     public static void main(String args[])
     {
