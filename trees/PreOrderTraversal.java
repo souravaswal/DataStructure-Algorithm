@@ -1,4 +1,4 @@
-/**
+package trees; /**
  * Definition for binary tree
  * class TreeNode {
  *     int val;
@@ -15,7 +15,7 @@
  /**
 	
 
-Given a binary tree, return the inorder traversal of its nodes’ values.
+Given a binary tree, return the preorder traversal of its nodes’ values.
 
 Example :
 Given binary tree
@@ -26,33 +26,34 @@ Given binary tree
     /
    3
 
-return [1,3,2].
+return [1,2,3].
 
 Using recursion is not allowed.
 
  **/
 public class Solution {
-    
-    public int[] inorderTraversal(TreeNode A) 
-    {
-        List<Integer> list = new ArrayList<Integer>();
+    public int[] preorderTraversal(TreeNode A) {
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        TreeNode current = A; 
+        List<Integer> list = new ArrayList<Integer>();
+        TreeNode current = A;
+        
         while(current != null || !stack.isEmpty())
         {
             while(current != null)
             {
+                list.add(current.val);
                 stack.push(current);
                 current = current.left;
             }
-            current = stack.pop();
-            list.add(current.val);
-            current = current.right;
+        current = stack.pop();
+        current = current.right;
+    
         }
+        
         int[] array = new int[list.size()];
         for(int i=0;i<array.length;i++) 
         {
-         array[i] = list.get(i);
+            array[i] = list.get(i);
         }
         return array;
         

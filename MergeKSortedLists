@@ -1,4 +1,4 @@
-class Solution {
+class trees.Solution {
     public ListNode mergeKLists(ListNode[] lists) {
         if(lists.length==0)
             return null;

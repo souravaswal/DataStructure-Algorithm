@@ -1,4 +1,4 @@
-/**
+package trees; /**
 
 Given preorder and inorder traversal of a tree, construct the binary tree.
 
@@ -16,6 +16,11 @@ Return :
           2   3
 
 **/
+
+import javax.swing.tree.TreeNode;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Definition for binary tree
  * class TreeNode {
@@ -33,7 +38,7 @@ public class Solution
 {
     int index = 0;
     HashMap<Integer, Integer> map = new HashMap<>();
-    public TreeNode buildTree(ArrayList<Integer> A, ArrayList<Integer> B) 
+    public TreeNode buildTree(ArrayList<Integer> A, ArrayList<Integer> B)
     {
         for(int i=0; i<A.size(); i++)
         {

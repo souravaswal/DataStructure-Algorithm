@@ -1,4 +1,4 @@
-#Given an array check if sub-array with sum zero exists or not using HashSet
+package array;
 
 import java.util.HashSet;
 import java.util.Set;
