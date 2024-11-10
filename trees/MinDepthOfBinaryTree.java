@@ -1,4 +1,4 @@
-/**
+package trees; /**
 
 Given a binary tree, find its minimum depth.
 
@@ -15,6 +15,8 @@ Example :
 min depth = 2.
 
 **/
+
+import javax.swing.tree.TreeNode;
 
 /**
  * Definition for binary tree

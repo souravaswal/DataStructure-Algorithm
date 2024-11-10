@@ -1,4 +1,4 @@
-/**
+package trees; /**
 
 Two elements of a binary search tree (BST) are swapped by mistake.
 Tell us the 2 values swapping which the tree will be restored.

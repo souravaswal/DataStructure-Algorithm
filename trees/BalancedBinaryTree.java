@@ -1,4 +1,4 @@
-/**
+package trees; /**
 
 Given a binary tree, determine if it is height-balanced.
 
@@ -27,6 +27,8 @@ Return : False or 0
          Difference = 2 > 1. 
 
  **/
+
+import javax.swing.tree.TreeNode;
 
 /**
  * Definition for binary tree

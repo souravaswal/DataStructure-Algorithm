@@ -1,4 +1,4 @@
-/**
+package trees; /**
  * Definition for binary tree
  * class TreeNode {
  *     int val;

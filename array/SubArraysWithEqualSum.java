@@ -1,4 +1,4 @@
-#Check if sub-arrays with equal sum exists or not
+package array;
 
 import java.util.ArrayList;
 

@@ -1,9 +1,6 @@
-#Rotate a 2-D Matrix with 90 degree using another matrix.
+package array;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class TestQuestions 
+public class TestQuestions
 {
     public static void main(String[] args) 
     {
